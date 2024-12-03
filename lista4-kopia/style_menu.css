@@ -1,0 +1,65 @@
+body {
+    background-image: url(wroclaw.jpg);
+}
+
+
+.menu {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+}
+
+.menu > li {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.submenu {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background: #444;
+    padding: 10px 0;
+    list-style: none;
+}
+
+.submenu li {
+    position: relative;
+}
+
+.submenu li a {
+    padding: 10px 20px;
+    white-space: nowrap; 
+}
+
+.menu li:hover > .submenu {
+    display: block;
+}
+
+.submenu .submenu {
+    left: 100%; 
+    top: 0;
+}
+
+.submenu li:hover > .submenu {
+    display: block; 
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+}

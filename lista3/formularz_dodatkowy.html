@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Formularz dodatkowych informacji o użytkowniku.">
+    <meta name="keywords" content="formularz, informacje, podpowiedzi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz Dodatkowych Informacji</title>
+
+</head>
+<body>
+    <header>
+        <h1>Dodatkowe Informacje o Użytkowniku</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="atrakcje.html">Atrakcje</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="formularz_dodatkowy.html">Formularz</a></li>
+        </ul>
+    </nav>
+
+
+    <section>
+        <h3>Formularz dodatkowych informacji</h3>
+        <form action="mailto:info@example.com" method="post" autocomplete="on">
+            <div>
+                <label for="favorite-color">Ulubiony kolor:</label>
+                <input type="color" id="favorite-color" name="favorite-color">
+            </div>
+
+            <div>
+                <label for="birth-date">Data urodzenia:</label>
+                <input type="date" id="birth-date" name="birth-date">
+            </div>
+            <div>
+                <label for="birth-month">Miesiąc urodzenia:</label>
+                <input type="month" id="birth-month" name="birth-month">
+            </div>
+
+            <div>
+                <label for="satisfaction-level">Poziom zadowolenia z naszej strony (0-10):</label>
+                <input type="range" id="satisfaction-level" name="satisfaction-level" min="0" max="10" step="1">
+            </div>
+
+            <div>
+                <label for="search">Szukaj informacji:</label>
+                <input type="search" id="search" name="search" placeholder="Wpisz słowa kluczowe">
+            </div>
+
+            <div>
+                <label for="website">Twoja strona internetowa:</label>
+                <input type="url" id="website" name="website" placeholder="https://przyklad.com">
+            </div>
+
+            <div>
+                <input type="submit" value="Wyślij">
+                <input type="reset" value="Wyczyść">
+            </div>
+        </form>
+    </section>
+</body>
+</html>

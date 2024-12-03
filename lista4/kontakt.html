@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Formularz osobowy z walidacją.">
+    <meta name="keywords" content="formularz, dane osobowe, walidacja">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz Osobowy</title>
+    <link rel="stylesheet" href="style_kontakt.css">
+
+    <!-- <style>
+        #phone {
+            background-color: #370909;
+            color: #000;
+        }
+    </style> -->
+
+</head>
+<body>
+    <header>
+        <h1>Formularz Osobowy</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="atrakcje.html">Atrakcje</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="wydarzenia.html">Wydarzenia</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <section>
+            <form action="mailto:kontakt@example.com" method="post" autocomplete="on">
+                <div id="start">
+                    <label for="first-name">Imię:</label>
+                    <input type="text" id="first-name" name="first-name" autofocus required>
+                    <span id="wprowadz_imie">Wprowadź swoje imię KLIKNIJ!!</span>
+                </div>
+
+                <div>
+                    <label for="last-name">Nazwisko:</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                    <span>Wprowadź swoje nazwisko</span>
+                </div>
+
+                <div>
+                    <label for="birth-month">Miesiąc urodzin:</label>
+                    <input list="months" name="birth-month" id="birth-month">
+                    <datalist id="months">
+                        <option value="Styczeń">
+                        <option value="Luty">
+                        <option value="Marzec">
+                        <option value="Kwiecień">
+                        <option value="Maj">
+                        <option value="Czerwiec">
+                        <option value="Lipiec">
+                        <option value="Sierpień">
+                        <option value="Wrzesień">
+                        <option value="Październik">
+                        <option value="Listopad">
+                        <option value="Grudzień">
+                    </datalist>
+                    <span>Wybierz miesiąc urodzin</span>
+                </div>
+
+                <div>
+                    <label for="email">Adres e-mail:</label>
+                    <input type="email" id="email" name="email" required >
+                    <span>Format: przykład@domena.com</span>
+                </div>
+
+                <div>
+                    <label for="phone">Numer telefonu:</label>
+                    <input type="tel" id="phone" name="phone" pattern="^\+\d{2} \d{3}-\d{3}-\d{3}$" required>
+                    <span>Format: +XX XXX-XXX-XXX</span>
+                </div>
+
+
+                <div>
+                    <input type="checkbox" id="newsletter" name="newsletter" value="tak">
+                    <label for="newsletter">Zapisz się do newslettera</label>
+                    <input type="text" id="newsletter-email" name="newsletter-email" placeholder="Adres e-mail" disabled>
+                </div>                   
+
+
+
+                <div>
+                    <input type="submit" value="Wyślij">
+                    <input type="reset" value="Wyczyść">
+                </div>
+            </form>
+        </section>
+
+
+        <section>
+            <h2>Nasze inne linki</h2>
+            <a href="https://www.pwr.edu.pl/" id="pwr_link">Politechnika Wrocławska</a>
+        </section>
+
+        <section>
+            <a href="#dol">Przejdź na dół strony</a>
+            <ul id="lista">
+                <li id="Element1">Element 1</li>
+                <li id="Element2">Element 2</li>
+                <li id="Element3">Element 3</li>
+                <li id="Element4">Element 4</li>
+                <li id="Element5">Element 5</li>
+                <li id="Element6">Element 6</li>
+                <li id="Element7">Element 7</li>
+                <li id="Element8">Element 8</li>
+                <li id="Element9">Element 9</li>
+                <li id="Element10">Element 10</li>
+        </section>
+
+        <div class="div_lista_2">
+
+            <ul id="list2">
+                <li id="Element1">Element 1</li>
+                <li id="Element2">Element 2</li>
+                <li id="Element3">Element 3</li>
+                <li id="Element4">Element 4</li>
+                <li id="Element5">Element 5</li>
+                <li id="Element6">Element 6</li>
+                <li id="Element7">Element 7</li>
+                <li id="Element8">Element 8</li>
+                <li id="Element9">Element 9</li>
+                <li id="Element10">Element 10</li>
+            </div>
+
+            <div>
+                <p>To jest pierwszy akapit.</p>
+            </div>
+            
+            <div>
+                <p>To jest drugi akapit.</p>
+                <p>To jest trzeci akapit.</p>
+            </div>
+            <div></div>
+
+
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <section id="dol">
+                <p>Dol strony</p>
+            </section>
+            
+    </main>
+</body>
+</html>

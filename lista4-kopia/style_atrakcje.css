@@ -1,0 +1,72 @@
+/* Ogólne style tabeli */
+
+body {
+    background-image: repeating-linear-gradient(45deg, #ccc, #ccc 10px, #fff 10px, #fff 20px);
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Usuwa podwójne linie między komórkami */
+    margin-top: 20px;
+}
+
+/* Nagłówki tabeli */
+th {
+    background-color: #4CAF50; /* Tło nagłówków */
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    border: 1px solid #ddd; /* Obramowanie wokół nagłówków */
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* Komórki tabeli */
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Styl dla alternatywnych wierszy (np. zebra-striping) */
+tbody tr:nth-child(even) {
+    background-color: #e2f596;
+}
+
+/* Styl dla wiersza, który wyróżnia się, np. z akcentowanymi komórkami */
+tbody tr:hover {
+    background-color: #e9f5f9;
+}
+
+/* Stylowanie tabeli zagnieżdżonej */
+table table {
+    width: 90%;
+    border: 5px solid #aaa;
+    margin: 0 auto;
+}
+
+table table td {
+    padding: 5px;
+    font-size: 0.9em;
+    border: 1px solid #ccc;
+}
+
+/* Dodatkowe stylizowanie granic */
+.table-bordered {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #333;
+}
+
+/* Stylowanie kolumn z użyciem pseudo-klas */
+th[colspan="2"], td[colspan="2"] {
+    background-color: #f2dce5;
+    font-style: italic;
+}
+
+/* Stylowanie nagłówków tabeli wewnętrznej */
+table table th {
+    background-color: #444;
+    color: #fff;
+}

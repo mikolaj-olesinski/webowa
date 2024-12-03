@@ -1,0 +1,100 @@
+body {
+    background-color: #f0f8ff;
+}
+
+p {
+    color: gray;
+    font-size: 16px;
+}
+
+.najwazniejsze_daty {
+    font-size: 20px;
+}
+
+
+.poczatki_wro .historia_wro {
+    color: green;
+}
+
+.lista_dat > ul {
+    color: blue;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image: repeating-linear-gradient(45deg, #ccc, #ccc 10px, #fff 10px, #fff 20px);
+        padding: 20px;
+    }
+}
+
+
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative; 
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    width: 180px; 
+    text-align: center;
+}
+
+
+nav ul li:hover > ul {
+    display: block; 
+}
+
+nav ul li > ul {
+    display: none; 
+    position: absolute; 
+    top: 100%;
+    left: 0;
+    background-color: #f0f0f0;
+    min-width: 180px;
+    border: 1px solid #ccc;
+}
+
+nav ul li > ul li {
+    display: block;
+}
+
+nav ul li > ul li a {
+    padding: 10px;
+    text-align: left;
+}
+
+
+nav ul li > ul li a:hover {
+    background-color: #ffcc00;
+}
+
+
+nav ul li > ul li > ul {
+    top: 0;
+    left: 100%; 
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 20px;
+}

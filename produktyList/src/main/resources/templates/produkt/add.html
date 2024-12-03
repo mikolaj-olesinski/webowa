@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>Add produkt form</title>
+</head>
+<body>
+<h1>Add a new produkt</h1>
+<form action="#" th:action="@{/produkt/add}" th:object="${produkt}" method="post">
+    <!-- Pole Id: wymagane i musi być wypełnione -->
+    <p>Id: <input type="text" th:field="*{id}" placeholder="Wprowadź Id" required /></p>
+
+    <!-- Pole Nazwa: wymagane i musi być wypełnione -->
+    <p>Nazwa: <input type="text" th:field="*{nazwa}" placeholder="Wprowadź nazwę produktu" required /></p>
+
+    <!-- Pole Waga: opcjonalne -->
+    <p>Waga (kg): <input type="number" step="0.01" th:field="*{waga}" placeholder="0.00" /></p>
+
+    <!-- Pole Cena: wymagane, dopuszcza tylko dwie cyfry po przecinku -->
+    <p>Cena (zł):
+        <input
+                type="text"
+                th:field="*{cena}"
+                placeholder="0.00"
+                required
+                pattern="^\d+(\.\d{2})?$"
+                title="Cena musi być liczbą z dokładnie dwoma miejscami po przecinku (np. 12.34)" />
+    </p>
+
+    <!-- Przycisk dodaj i resetuj -->
+    <p>
+        <input type="submit" value="Add" />
+        <input type="reset" value="Reset" />
+    </p>
+</form>
+</body>
+</html>

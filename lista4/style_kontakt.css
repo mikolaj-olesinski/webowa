@@ -1,0 +1,121 @@
+
+body{
+    background: linear-gradient(to right, #dacecb, #f7c49b); 
+    color: rgb(12, 12, 12);
+}
+
+
+input:hover:required {
+    background-color: #e48e8e;
+}
+
+
+#first-name:focus {
+    background-color: #a0ff99;
+}
+
+input:enabled {
+    color:#975494;
+}
+
+#wprowadz_imie:active {
+    background-color: #ffcc00;
+}
+
+p:only-child {
+    color: red;
+}
+
+#pwr_link:visited {
+    color: #0015ff; 
+}
+
+#pwr_link a:link {
+    color: #20ad56;
+}
+
+#newsletter:checked + label {
+    color: #20ad56;
+}
+
+input:disabled {
+    background-color: #a19c87;
+}
+
+#lista li:first-child {
+    color: #ad2087;
+}
+
+#lista li:last-child {
+    color: #d48d36;
+}
+
+#lista li:nth-child(2) {
+    color: #e63a3a;
+}
+
+#lista li:nth-last-child(2) {
+    color: #2a60dc;
+}
+
+li:first-of-type{
+    background-color: #e4d0df;
+}
+
+
+div:not(#start){
+    opacity: 0.7;
+}
+
+section:target {
+    background-color: yellow;
+}
+
+div:empty {
+    outline: #0015ff 2px solid;
+}
+
+
+.div_lista_2 {
+    background-image: url("https://img.freepik.com/premium-photo/minimalist-cat-icon-kimoicore39s-innovative-detailed-design_899449-90624.jpg");
+    background-repeat: round;
+    background-attachment: fixed;
+    background-position: bottom;
+}
+
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative; 
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    width: 180px; 
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 20px;
+}
+

@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container > div {
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #666;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+p {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+
+.static-box {
+    position: static;
+    background-color: #d4edda;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #28a745;
+    font-style: italic;
+    font-weight: bold;
+    color: #155724;
+    text-transform: uppercase;
+}
+
+
+.relative-box {
+    position: relative;
+    top: 20px;
+    left: 30px;
+    background-color: #f8d7da;
+    border-width: 2px;
+    border-style: dashed;
+    border-color: #dc3545;
+    font-style: oblique;
+    color: #721c24;
+    text-shadow: 1px 1px 2px #dc3545;
+}
+
+
+.absolute-box {
+    position: absolute;
+    top: 50px;
+    left: 500px;
+    background-color: #cce5ff;
+    border-width: 4px;
+    border-style: dotted;
+    border-color: #007bff;
+    font-weight: bolder;
+    font-size: 1.1em;
+    color: #004085;
+    letter-spacing: 1px;
+}
+
+.fixed-box {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 150px;
+    background-color: #fff3cd;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ffc107;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    color: #856404;
+    font-variant: small-caps;
+}
+
+.float-box {
+    float: left;
+    width: 150px;
+    background-color: #ffeeba;
+    border-width: 3px;
+    border-style: double;
+    border-color: #fd7e14;
+    font-size: 1em;
+    color: #856404;
+    text-decoration: underline;
+    font-style: normal;
+}
+
+.clear-box {
+    clear: both;
+    background-color: #f5c6cb;
+    border-width: 2px;
+    border-style: groove;
+    border-color: #dc3545;
+    margin-top: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: #721c24;
+    text-transform: capitalize;
+}
+

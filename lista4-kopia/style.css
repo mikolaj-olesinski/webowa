@@ -1,0 +1,63 @@
+body {
+    background-color: rgb(175, 196, 203);
+}
+
+p {
+    color: gray;
+    font-size: 16px;
+}
+
+.najwazniejsze_daty {
+    background-color: yellow;
+    font-size: 20px;
+}
+
+#test_ID {
+    color: red;
+}
+
+.poczatki_wro .historia_wro {
+    color: green;
+}
+
+.lista_dat > ul {
+    color: blue;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em; /* Zmniejszamy rozmiar nagłówka */
+    }
+    
+    nav ul {
+        flex-direction: column; /* Zmiana kierunku listy na kolumnowy */
+        padding: 0;
+    }
+    
+    nav li {
+        margin: 5px 0; /* Dodajemy marginesy między elementami */
+    }
+
+    p {
+        font-size: 14px; /* Zmniejszamy rozmiar czcionki */
+    }
+}
+
+/* Styl dla ekranów o szerokości do 480px */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em; /* Dalsze zmniejszanie nagłówka */
+    }
+    
+    main {
+        padding: 10px; /* Dodajemy padding do main */
+    }
+    
+    nav {
+        display: none; /* Ukrywamy menu na bardzo małych ekranach */
+    }
+    
+    footer {
+        font-size: 12px; /* Zmniejszamy rozmiar czcionki w stopce */
+    }
+}
