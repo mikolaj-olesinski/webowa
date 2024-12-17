@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>Add produkt form</title>
+</head>
+<body>
+<h1>Add a new produkt</h1>
+<form action="#" th:action="@{/produkt/add}" th:object="${produkt}" method="post">
+    <p>Id: <input type="text" th:field="*{id}" placeholder="Wprowadź Id" required /></p>
+    <p>Nazwa: <input type="text" th:field="*{nazwa}" placeholder="Wprowadź nazwę produktu" required /></p>
+    <p>Waga (kg): <input type="number" step="0.01" th:field="*{waga}" placeholder="0.00" required pattern="^\d+(\.\d{2})?$"/></p>
+    <p>Cena (zł): <input type="number" step="0.01" th:field="*{cena}" placeholder="0.00" required pattern="^\d+(\.\d{2})?$" /></p>
+    <p>Kategoria:
+        <select th:field="*{kategoria}" id="kategoriaSelect" onchange="updateKategoria()">
+            <option value="">Wybierz kategorię</option>
+            <option th:each="kategoria : ${kategorie}" th:value="${kategoria}" th:text="${kategoria}"></option>
+        </select>
+        <input type="text" id="nowaKategoria" name="nowaKategoria" placeholder="Dodaj nową kategorię" />
+    </p>
+    <p>Zdjęcie URL: <input type="text" th:field="*{zdjecieUrl}" placeholder="Podaj URL zdjęcia" /></p>
+    <p>
+        <input type="submit" value="Add" />
+        <input type="reset" value="Reset" />
+    </p>
+</form>
+
+<script>
+    function updateKategoria() {
+        var select = document.getElementById("kategoriaSelect");
+        var input = document.getElementById("nowaKategoria");
+        input.value = select.options[select.selectedIndex].value;
+    }
+</script>
+
+</body>
+</html>

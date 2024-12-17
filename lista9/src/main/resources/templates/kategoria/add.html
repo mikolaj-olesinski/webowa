@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>Add Category Form</title>
+</head>
+<body>
+<h1>Add a New Category</h1>
+<form action="#" th:action="@{/kategoria/add}" th:object="${kategoria}" method="post">
+    <p>Id: <input type="number" th:field="*{id}" placeholder="Wprowadź Id" required /></p>
+    <p>Nazwa: <input type="text" th:field="*{name}" placeholder="Wprowadź nazwę kategorii" required /></p>
+    <p>
+        <input type="submit" value="Add" />
+        <input type="reset" value="Reset" />
+    </p>
+</form>
+</body>
+</html>

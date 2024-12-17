@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Produkty list</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<h1>Produkty list</h1>
+
+<div class="button-container">
+  <a class="btn btn-primary" href="/produkt/seed">Seed data</a>
+  <a class="btn btn-primary" href="/produkt/add">Add produkt</a>
+</div>
+
+<div class="content">
+  <table class="table produkt-list">
+    <thead>
+    <tr>
+      <th>Id</th>
+        <th>Zdjęcie</th>
+      <th>Nazwa</th>
+      <th>Waga</th>
+      <th>Cena</th>
+        <th>Kategoria</th>
+      <th colspan="3">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="produkt : ${produktList}">
+      <td th:text="${produkt.getId()}"></td>
+      <td><img th:src="${produkt.getZdjecieUrl()}" alt="Zdjęcie produktu" style="width: 100px; height: auto;" /></td>
+      <td th:text="${produkt.getNazwa()}"></td>
+      <td th:text="${produkt.getWaga() + ' kg'}"></td>
+      <td th:text="${#numbers.formatDecimal(produkt.getCena(),1,2)} + ' zł'"></td>
+      <td th:text="${produkt.getKategoria()}"></td>
+      <td><a class="btn btn-action" th:href="@{/produkt/details(id=${produkt.id})}">Details</a></td>
+      <td><a class="btn btn-action" th:href="@{/produkt/{produktId}/edit(produktId=${produkt.getId()})}">Edit</a></td>
+      <td><a class="btn btn-action" th:href="@{/produkt/remove(id=${produkt.id})}">Remove</a></td>
+    </tr>
+    </tbody>
+
+  </table>
+</div>
+</body>
+</html>
