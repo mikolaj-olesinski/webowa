@@ -34,7 +34,7 @@ public class ProduktController {
     @GetMapping("/add")
     public String addProdukt(Model model) {
         model.addAttribute("produkt", new Produkt());
-        model.addAttribute("kategorieList", kategoriaService.getAllKategorie()); // Poprawiona nazwa atrybutu
+        model.addAttribute("kategorieList", kategoriaService.getAllKategorie());
         return "produkt/add";
     }
 
@@ -47,16 +47,21 @@ public class ProduktController {
     // Edytowanie produktu
     @GetMapping("/{produktId}/edit")
     public String editProdukt(@PathVariable Long produktId, Model model) {
-        model.addAttribute("produkt", produktService.getProduktById(produktId));
-        model.addAttribute("kategorie", kategoriaService.getAllKategorie());
+        Produkt produkt = produktService.getProduktById(produktId);
+
+        model.addAttribute("produkt", produkt);
+        model.addAttribute("kategorieList", kategoriaService.getAllKategorie());
+
         return "produkt/edit";
     }
+
 
     @PostMapping("/edit")
     public String editProdukt(@ModelAttribute Produkt produkt) {
         produktService.updateProdukt(produkt);
         return "redirect:/produkt/";
     }
+
 
     // Szczegóły produktu
     @GetMapping("/{produktId}/details")

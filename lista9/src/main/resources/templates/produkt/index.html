@@ -21,6 +21,7 @@
       <th>Nazwa</th>
       <th>Waga</th>
       <th>Cena</th>
+      <th>Kategoria</th>
       <th colspan="3">Actions</th>
     </tr>
     </thead>
@@ -30,6 +31,7 @@
       <td th:text="${produkt.name}"></td>
       <td th:text="${produkt.weight} + ' kg'"></td>
       <td th:text="${#numbers.formatDecimal(produkt.price,1,2)} + ' zł'"></td>
+      <td th:text="${produkt.kategoria.name}"></td>
       <td><a class="btn btn-action" th:href="@{/produkt/{produktId}/details(produktId=${produkt.id})}">Details</a></td>
       <td><a class="btn btn-action" th:href="@{/produkt/{produktId}/edit(produktId=${produkt.id})}">Edit</a></td>
       <td><a class="btn btn-action" th:href="@{/produkt/{produktId}/remove(produktId=${produkt.id})}">Remove</a></td>

@@ -32,8 +32,10 @@ public class KategoriaService {
         Kategoria kategoria = kategoriaRepository.findById(id).orElse(null);
         if (kategoria != null) {
             kategoria.getProdukty().clear();
+            kategoriaRepository.save(kategoria);
             kategoriaRepository.delete(kategoria);
         }
     }
+
 
 }

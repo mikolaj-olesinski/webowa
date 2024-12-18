@@ -8,7 +8,6 @@
 <body>
 <h1>Add a New Produkt</h1>
 <form action="#" th:action="@{/produkt/add}" th:object="${produkt}" method="post">
-    <p>Id: <input type="number" th:field="*{id}" placeholder="Wprowadź Id" required /></p>
     <p>Nazwa: <input type="text" th:field="*{name}" placeholder="Wprowadź nazwę produktu" required /></p>
     <p>Waga (kg): <input type="number" step="0.01" th:field="*{weight}" placeholder="0.00" required pattern="^\d+(\.\d{2})?$" /></p>
     <p>Cena (zł): <input type="number" step="0.01" th:field="*{price}" placeholder="0.00" required pattern="^\d+(\.\d{2})?$" /></p>
