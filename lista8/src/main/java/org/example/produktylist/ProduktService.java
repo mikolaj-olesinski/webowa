@@ -18,7 +18,7 @@ public class ProduktService {
         kategorie.add("Spożywcze");
         kategorie.add("AGD");
         kategorie.add("Elektronika");
-        produktList.add(new Produkt(1, "Mleko", 1.00, 2.50, "Spożywcze", "/images/mleko.jpg"));
+        produktList.add(new Produkt(1, "Mleko", 1.00, 2.50, "Spożywcze", "https://piekarniapajda.pl/wp-content/uploads/2020/03/oliwski.png"));
         produktList.add(new Produkt(2, "Chleb", 0.50, 3.50, "Spożywcze", "/images/chleb.jpg"));
         produktList.add(new Produkt(3, "Masło", 0.20, 5.50, "Spożywcze", "/images/maslo.jpg"));
     }
