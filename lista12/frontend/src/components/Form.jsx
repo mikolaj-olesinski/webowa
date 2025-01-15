@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-function Form() {
+function Form({ onSubmit }) {
   const [formData, setFormData] = useState({
     name: '',
-    email: ''
+    email: '',
+    birthDate: '',
+    city: ''
   });
 
   const handleSubmit = async (e) => {
@@ -19,8 +21,8 @@ function Form() {
       });
       
       if (response.ok) {
-        setFormData({ name: '', email: '' });
-        window.location.reload(); // Odśwież stronę aby pokazać nowe dane
+        setFormData({ name: '', email: '', birthDate: '', city: '' });
+        onSubmit(); // Odśwież listę
       }
     } catch (error) {
       console.error('Błąd wysyłania formularza:', error);
@@ -35,35 +37,57 @@ function Form() {
   };
 
   return (
-    <div className="form-container">
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Imię:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        
-        <button type="submit">Wyślij</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="form">
+      <div className="form-group">
+        <label htmlFor="name">Imię:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      
+      <div className="form-group">
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="birthDate">Data urodzenia:</label>
+        <input
+          type="date"
+          id="birthDate"
+          name="birthDate"
+          value={formData.birthDate}
+          onChange={handleChange}
+          required
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="city">Miasto:</label>
+        <input
+          type="text"
+          id="city"
+          name="city"
+          value={formData.city}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      
+      <button type="submit">Dodaj</button>
+    </form>
   );
 }
 

@@ -1,14 +1,18 @@
 [
   {
     "id": 1,
-    "name": "aha",
-    "email": "example@mail.com",
-    "created_at": "2025-01-14T22:53:01.000Z"
+    "name": "tesst",
+    "email": "test@example.com",
+    "birth_date": "2024-06-05T22:00:00.000Z",
+    "city": "aha",
+    "created_at": "2025-01-15T07:12:29.000Z"
   },
   {
     "id": 2,
-    "name": "test",
-    "email": "cos@gmail.com",
-    "created_at": "2025-01-14T22:53:08.000Z"
+    "name": "cos",
+    "email": "okej@test.com",
+    "birth_date": "2025-01-02T23:00:00.000Z",
+    "city": "Wrocław",
+    "created_at": "2025-01-15T07:12:59.000Z"
   }
 ]

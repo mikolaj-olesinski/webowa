@@ -7,9 +7,21 @@ const path = require('path');
 // Pobierz wszystkie wpisy
 router.get('/', async (req, res) => {
   try {
-    const [rows] = await connection.promise().query('SELECT * FROM entries');
+    const { search, sortBy, sortOrder } = req.query;
+    let query = 'SELECT * FROM entries';
     
-    // Zapisz do pliku JSON
+    if (search) {
+      query += ` WHERE name LIKE '%${search}%' 
+                 OR email LIKE '%${search}%' 
+                 OR city LIKE '%${search}%'`;
+    }
+    
+    if (sortBy) {
+      query += ` ORDER BY ${sortBy} ${sortOrder || 'ASC'}`;
+    }
+    
+    const [rows] = await connection.promise().query(query);
+    
     await fs.writeFile(
       path.join(__dirname, '../data.json'),
       JSON.stringify(rows, null, 2)
@@ -23,22 +35,41 @@ router.get('/', async (req, res) => {
 
 // Dodaj nowy wpis
 router.post('/', async (req, res) => {
-  const { name, email } = req.body;
+  const { name, email, birthDate, city } = req.body;
   
   try {
     await connection.promise().execute(
-      'INSERT INTO entries (name, email) VALUES (?, ?)',
-      [name, email]
+      'INSERT INTO entries (name, email, birth_date, city) VALUES (?, ?, ?, ?)',
+      [name, email, birthDate, city]
     );
     
     const [rows] = await connection.promise().query('SELECT * FROM entries');
-    
     await fs.writeFile(
       path.join(__dirname, '../data.json'),
       JSON.stringify(rows, null, 2)
     );
     
     res.json({ message: 'Dane zostały zapisane' });
+  } catch (error) {
+    res.status(500).json({ error: 'Błąd serwera' });
+  }
+});
+
+// Usuń wpis
+router.delete('/:id', async (req, res) => {
+  try {
+    await connection.promise().execute(
+      'DELETE FROM entries WHERE id = ?',
+      [req.params.id]
+    );
+    
+    const [rows] = await connection.promise().query('SELECT * FROM entries');
+    await fs.writeFile(
+      path.join(__dirname, '../data.json'),
+      JSON.stringify(rows, null, 2)
+    );
+    
+    res.json({ message: 'Wpis został usunięty' });
   } catch (error) {
     res.status(500).json({ error: 'Błąd serwera' });
   }
