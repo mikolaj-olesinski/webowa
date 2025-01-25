@@ -4,7 +4,6 @@ const connection = require('../config/database');
 const fs = require('fs').promises;
 const path = require('path');
 
-// Pobierz wszystkie wpisy
 router.get('/', async (req, res) => {
   try {
     const { search, sortBy, sortOrder } = req.query;
@@ -33,7 +32,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Dodaj nowy wpis
+
 router.post('/', async (req, res) => {
   const { name, email, birthDate, city } = req.body;
   
@@ -55,7 +54,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Usuń wpis
+
 router.delete('/:id', async (req, res) => {
   try {
     await connection.promise().execute(

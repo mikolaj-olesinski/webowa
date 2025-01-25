@@ -14,7 +14,7 @@ function DataList() {
       if (searchTerm) params.append('search', searchTerm);
       if (sortKey) {
         params.append('sortBy', sortKey);
-        params.append('sortOrder', sortDir);
+        params.append('sortOrder', sortDir);       
       }
       
       const response = await fetch(`http://localhost:3001/api/entries?${params}`);
