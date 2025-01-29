@@ -80,4 +80,29 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// Backend (Express.js)
+router.put('/:id', async (req, res) => {
+  const { name, startTime, duration } = req.body;
+  try {
+    await connection.promise().execute(
+      'UPDATE schedules SET subject_name = ?, start_time = ?, duration = ? WHERE id = ?',
+      [name, startTime, duration, req.params.id]
+    );
+
+    const [rows] = await connection.promise().query(
+      'SELECT * FROM schedules WHERE day = ? ORDER BY start_time',
+      [req.body.day]
+    );
+
+    await fs.writeFile(
+      path.join(__dirname, '../schedules.json'),
+      JSON.stringify(rows, null, 2)
+    );
+
+    res.json({ message: 'Przedmiot został zaktualizowany' });
+  } catch (error) {
+    res.status(500).json({ error: 'Błąd serwera' });
+  }
+});
+
 module.exports = router;
